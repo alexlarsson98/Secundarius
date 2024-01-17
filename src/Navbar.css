@@ -1,0 +1,91 @@
+.navbar {
+  background: transparent;
+  color: white;
+  min-height: 120px; /* Adjust the navbar height */
+  position: fixed; /* Fixed position to stay at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px; /* Add padding to ensure content isn't too close to the screen edges */
+  transition: background-color 0.3s;
+}
+
+.navbar img {
+  position: absolute;
+  left: 20px; /* Adjust the left position for mobile */
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  max-height: 70px; /* Logo max height */
+  max-width: 100%; /* Ensures the image is never bigger than its container */
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.links a {
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  padding: 10px 15px; /* Adjust padding for touch targets */
+  margin: 0 10px; /* Adjust margins for spacing */
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s;
+  font-weight: bold;
+}
+
+.navbar:hover {
+  background-color: white;
+}
+
+.links a:hover, .navbar:hover .links a {
+  color: black;
+  background-color: transparent;
+}
+
+.links a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between; /* Distribute space between logo and links */
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+
+  .navbar img {
+    left: 10px; /* Adjust logo position */
+    height: 50px; /* Adjust logo size */
+  }
+
+  .links {
+    order: 1; /* Force the links to be at the bottom */
+    width: 100%; /* Take full width of the navbar */
+    justify-content: space-around; /* Distribute links evenly */
+    margin-top: 10px; /* Add some space above the links */
+  }
+
+  .links a {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding: 8px 10px; /* Adjust padding */
+    margin: 0 5px; /* Adjust margins */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar img {
+    left: 50%; /* Center logo on smaller screens */
+    transform: translateX(-50%) translateY(-50%); /* Adjust translate to center logo */
+  }
+}
